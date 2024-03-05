@@ -1,0 +1,26 @@
+describe("test suit(login functionality)",()=>{
+    it.only("test cases(verify the login with valied details)",()=>{
+        cy.visit(Cypress.env('endUrl'))
+        cy.get('[placeholder="Username"]').type('Admin')
+        cy.get('[placeholder="Password"]').type('admin123')
+        cy.contains(' Login ').click()
+        cy.contains('Quick Launch').should('be.visible')
+    })
+})
+//     it("test cases(verify the login with invalied details)",()=>{
+//         cy.visit('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login')
+//         cy.get('[placeholder="Username"]').type('Adminjggcdhguk')
+//         cy.get('[placeholder="Password"]').type('admin123')
+//         cy.contains(' Login ').click()
+//         //cy.contains('Quick Launch').should('be.visible')
+//         cy.contains('Invalid credentials').should('be.visible')
+//     })
+//     it("test cases(verify the login with out any  details)",()=>{
+//         cy.visit('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login')
+//         cy.get('[placeholder="Username"]').type(' ')
+//         cy.get('[placeholder="Password"]').type(' ')
+//         cy.contains(' Login ').click()
+//         //cy.contains('Quick Launch').should('be.visible')
+//         cy.contains('Required').should('be.visible').and('have.text',"Required")
+//     })
+// })

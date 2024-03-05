@@ -1,0 +1,32 @@
+describe('testsute',()=>{
+    it.only("verify add company fuctionality in company structure submodule", ()=>{
+
+    cy.visit('https://icehrm-open.gamonoid.com/login.php?logout=1')
+    cy.get('[id="username"]').type('admin')
+    cy.get('[placeholder="Enter password"]').type('admin')
+    cy.get('[onclick="submitLogin();return false;"]').click()
+    cy.contains('Admin').click()
+    cy.contains(' Dashboard ').should('be.visible')
+    cy.contains(' Company Structure').click({force:true})
+    cy.contains(' Add New').click()
+    cy.get('[id="title"]').type('QA technologoes')
+    cy.get('[id="description"]').type('develop software applicstions')
+    cy.get('[id="address"]').type('madakasira,A.P')
+    cy.get('[id="rc_select_0"]').click()
+    cy.get('[title="Sub Unit"]').click({force:true})
+   // cy.contains('Sub Unit').click()
+    // .eq(0).click({force:true})
+    // cy.contains("Sub Unit").eq(0).click()
+    
+    //cy.pause()
+     //cy.get('[id="rc_select_1"]').type("India")
+     //cy.contains('India').click()
+     //cy.get('[title="Andorra"]').click({force:true})
+   // cy.get('[aria-controls="rc_select_1_list"]').select('Angola')
+    cy.get('#rc_select_2').select("(GMT+05:30) Asia/Kolkata")
+    cy.get('#rc_select_3').type('QA Team')
+    cy.get('body > div:nth-child(17) > div > div.ant-modal-wrap > div > div.ant-modal-content > div.ant-modal-body > form > div:nth-child(9) > div.ant-col.ant-col-16.ant-form-item-control > div > div > div > div > span.ant-select-selection-placeholder').type('IceHrm Employee')
+    cy.contains('Save').click()
+
+  })
+})
