@@ -10,5 +10,6 @@ describe('test sute(login verification page)',()=>{
         //cy.get('[class="close"]').should('be.visible')
         cy.contains(' Logout').click()
         cy.contains(' Login Page').should('be.visible')
+        cy.get('').type('')
     })
 })
